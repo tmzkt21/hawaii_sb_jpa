@@ -110,12 +110,10 @@ $('#login_button').click(e=>{
 	$.ajax({
 	url : '/user/login',
 	type : 'post',
-	data : JSON.stringify(
-			{
+	data : JSON.stringify({
 		userid : $('#userid').val(),
 		passwd : $('#passwd').val()
-	}
-			),
+	}),
 	dataType : 'json',
 	contentType : 'application/json',
 	success : d => {
@@ -135,3 +133,14 @@ $('#login_button').click(e=>{
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+

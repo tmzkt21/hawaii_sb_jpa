@@ -12,47 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.occamsrazor.web.util.Messenger;
 
 @RestController
-@RequestMapping("/member")
+@RequestMapping("/admin")
 public class AdminController {
-	@Autowired AdminService memberService;
 	
-	@PostMapping("/join")
-	public Messenger add(@RequestBody Admin member) {
-		int current = memberService.count();
-		String s = "";
-		memberService.add(member);
-		return (memberService.count() == (current+1))? Messenger.SUCCESS : Messenger.FAIL;
-	}
-	@PostMapping("/login")
-	public Messenger login(@RequestBody Admin member) {
-		
-		
-		return (memberService.login(member))? Messenger.SUCCESS : Messenger.FAIL;
-	}
-	@GetMapping("/list")
-	public Admin[] list() {
-		Admin[] members = new Admin[5];
-		return members;
-	}
-	
-	@GetMapping("/detail")
-	public Admin detail(@RequestBody Admin member) {
-		Admin returnMember = new Admin();
-		return returnMember;
-	}
-	@GetMapping("/count")
-	public int count() {
-		int count = 0;
-		return count;
-	}
-	@PutMapping("/update")
-	public Admin update(@RequestBody Admin member) {
-		Admin returnMember = new Admin();
-		return returnMember;
-	}
-	@DeleteMapping("/delete")
-	public Admin delete(@RequestBody Admin member) {
-		Admin returnMember = new Admin();
-		return returnMember;
-	}
 }

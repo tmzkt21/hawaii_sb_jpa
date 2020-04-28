@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <title>Insert title here</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
 </head>
 <style>
     html,
@@ -38,13 +36,15 @@
                 <img src="http://www.cdc.go.kr/cdc/img/main/h1_logo.png">
             </td>
             <td colspan="2">
-                <input id="search" type="text"> <br>
+                <input id="search" style="width:500px;height:50px;float:left;margin-left:50px" type="text">
+                <input id="search_button" style="width:150px;height:50px;float:left;margin-left:50px;background-color: #80003e; color: white" type="button" value="검색"> <br>
             </td>
             <td>
-                <input id="login-button" type="button" value="로그인">
-                <input id="cancl-Button" type="button" value="취소">
-                 <input id="cancl-Button" type="button" value="등록">
-                  <input id="cancl-Button" type="button" value="접속">
+                <a id="login_a" style="cursor:pointer;text-decoration: underline">회원가입</a>
+                <a id="join_a" style="cursor:pointer;text-decoration: underline">로그인</a>
+                <a id="register_a" style="cursor:pointer;text-decoration: underline">관리자 등록</a>
+                <a id="access_a" style="cursor:pointer;text-decoration: underline">관리자 접속</a>
+                
             </td>
         </tr>
         <tr id="menu">
@@ -52,7 +52,7 @@
             </td>
         </tr>
         <tr>
-            <td colspan="4">
+            <td id="content" colspan="4">
                 <img src="http://www.cdc.go.kr/cdc/img/main/visual_default_main_01.jpg">
             </td>
         </tr>
@@ -75,54 +75,16 @@
             </td>
         </tr>
     </table>
-
-
-    <section>
-        <nav>
-            <ul>
-                <li><a id="join_a">관리자 등록</a></li>
-                <li><a id="login_a">관리자 접속</a></li>
-                <li><a id="signin_a">사용자 등록</a></li>
-                <li><a id="signup_a">사용자 접속</a></li>
-
-            </ul>
-        </nav>
-
-        <article>
-
-            <form action="#">
-                <label>로그인</label> <br>
-                <input id="userid" type="text"> <br>
-                <label>비밀번호 </label><br>
-                <input id="password" type="text"><br>
-                  <label>등록</label> <br>
-                <input id="userid" type="text"> <br>
-                  <label>로그인</label> <br>
-                <input id="userid" type="text"> <br>
-                <input id="login-button" type="button" value="로그인">
-                <input id="cancl-Button" type="button" value="취소">
-
-            </form>
-
-
-        </article>
-    </section>
-
-
-    <footer>
-        <p>Footer</p>
-    </footer>
-
-    <script>
-        $('#kcdc').css({ width: '80%', height: '900px' }).addClass('border_black center')
-        $('#tr_1').css({ width: '80%', height: '50px' }).addClass('border_black center')
-        $('#menu').css({ width: '80%', height: '50px' }).addClass('border_black center')
-        $('#kcdc td').addClass('border_black', 'width_full')
-		$('#register_button').click( e=>{
-			e.preventDeafult
-			
-		})
-    </script>
+ <script>
+     $('#kcdc').css({ width: '80%', height: '900px' }).addClass('border_black center')
+     $('#tr_1').css({ width: '80%', height: '50px' }).addClass('border_black center')
+     $('#menu').css({ width: '80%', height: '50px' }).addClass('border_black center')
+     $('#kcdc td').addClass('border_black', 'width_full')
+     $('#register_a').click(e=>{
+     	e.preventDefault()
+     	location.href = "admin/register.html"
+     })
+ </script>
 </body>
 
 </html>
