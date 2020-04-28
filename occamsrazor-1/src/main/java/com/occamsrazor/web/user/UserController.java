@@ -21,26 +21,16 @@ import com.occamsrazor.web.util.Messenger;
 @RequestMapping("/user")
 public class UserController {
 	@Autowired UserService userService;
-	
-	
 	@PostMapping("/join")
 	public Messenger join(@RequestBody User user) {
 		int count = userService.count();
-		userService.saveFile(user);
-	//	return (userService.count() == count + 1) ? Messenger.SUCCESS : Messenger.FAIL;
-		return Messenger.SUCCESS;
+		userService.add(user);
+		return (userService.count() == count + 1) ? Messenger.SUCCESS : Messenger.FAIL;
 	}
-	
-	
-	
-	
 	@GetMapping("/list")
-	public List<User> list() {
-		
-		return userService.readFile();
-//		return userService.list();
+	public List<User> list(){
+		return userService.list();
 	}
-	
 	
 	@PostMapping("/login")
 	public Map<String,Object> login(@RequestBody User user) {
@@ -54,9 +44,6 @@ public class UserController {
 		}
 		return returnMap;
 	}
-	
-	
-	
 	@GetMapping("/detail/{userid}")
 	public User detail(@PathVariable String userid) {
 		return userService.detail(userid);
@@ -72,12 +59,6 @@ public class UserController {
 		return (userService.remove(userid)) ? Messenger.SUCCESS: Messenger.FAIL;
 	}
 	
-	@GetMapping("/check/{userid}")
-	public Messenger check(@PathVariable String userid) {
-	
-		
-		return (userService.check(userid) != null) ? Messenger.SUCCESS :Messenger.FAIL ;
-	}
-	
 }
+
 

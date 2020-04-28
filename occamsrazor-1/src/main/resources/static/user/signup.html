@@ -88,7 +88,7 @@ footer {
    	<input id="name" type="text"/> <br>
    	
    	<label>ID</label><br>
-   	<input id="userid" type="text"/> <input id = "redundancy_check" type ="button" value="아이디중복확인"/> <br>
+   	<input id="userid" type="text"/><br>
    	
    	<label>PASSWORD</label><br>
    	<input id="passwd" type="text"/><br>
@@ -134,7 +134,7 @@ $('#join_button')
 		contentType: 'application/json',
 		success: d =>{
 			if(d === 'SUCCESS'){
-				location.href = 'signin.html'
+				location.href = 'mypage.html'
 			}else{
 				location.href = 'signup.html'
 			}

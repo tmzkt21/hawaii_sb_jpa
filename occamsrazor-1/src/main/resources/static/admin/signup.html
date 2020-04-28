@@ -83,7 +83,7 @@ footer {
   </nav>
   
   <article>
-   <form action="#">
+   <form>
    	<label>NAME </label> <br>
    	<input id="name" type="text"/> <br>
    	
@@ -133,6 +133,7 @@ $('#join_button')
 		dataType: 'json',
 		contentType: 'application/json',
 		success: d =>{
+			consol.log('LOGIN RESULT ::'+d)
 			if(d === 'SUCCESS'){
 				location.href = 'signin.html'
 			}else{
@@ -154,7 +155,6 @@ $('#join_button')
 	    alert((d === 'SUCCESS')? '사용 가능한 아이디':'중복된 아이디')
 			
 			
-		}
 	
 	})
 	
