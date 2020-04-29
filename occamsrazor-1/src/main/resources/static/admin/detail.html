@@ -113,7 +113,30 @@
 		$('#menu').css({ width: '80%', height: '50px' }).addClass('border_black center')
 		$('#kcdc td').addClass('border_black', 'width_full')
 		$('#login_a').css({ color: 'skyblue' })
-		$('#register_a').css({color: 'blie', cursor: 'none',})
+		$('#register_a').click(e => {
+			
+			e.preventDefault()
+		
+			$.ajax({
+				url : '/admins',
+				type : 'post',
+				data : {
+					position :	$('#position').val
+					email :	$('#email').val
+					phoneNumber :	$('#phoneNumber').val
+					
+				},
+				datatype : 'json',
+				contentType : 'contentype/json',
+				success : d=> {
+					
+				},
+				error : (r,s,e) =>{
+					alert(r.status)
+				}
+				
+			})
+		})
 	</script>
 </body>
 
