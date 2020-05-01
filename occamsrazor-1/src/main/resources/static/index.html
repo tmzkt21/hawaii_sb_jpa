@@ -86,6 +86,29 @@
      	
      	location.href = "admin/register.html"
      })
+     $('#access_a').click(e=>{
+    	$.ajax({
+    		url:'/admins',
+    		type:'post',
+    		data:JSON.stringfy{
+    			
+    		}
+    		dataType:'json',
+    		
+    		contentType:'application/json',
+    		
+    		success: d=>{
+    			if(d === SUCCESS){
+    				
+    			}
+    		}
+    		error:(r,s,e) =>{
+    			alert(r.status)
+    		}
+    		
+    	})
+    	 
+     })
  </script>
 </body>
 

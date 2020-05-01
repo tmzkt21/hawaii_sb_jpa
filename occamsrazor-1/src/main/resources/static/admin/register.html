@@ -51,6 +51,7 @@ html, body {
 		</tr>
 		<tr>
 			<td id="content" colspan="4">
+				
 				<table id="admin" style="width: 80%; height: 80%; margin: 0 auto">
 					<tr style="width: 80%; height: 50px;">
 						<td rowspan="4"><img
@@ -80,6 +81,7 @@ html, body {
 						</td>
 					</tr>
 				</table>
+				
 			</td>
 		</tr>
 	</table>
@@ -105,7 +107,7 @@ html, body {
 				dataType:'json',
 				contentType:'application/json',
 				success:d=>{
-					location.href = 'access.html'
+					location.href = '../index.html'
 				},
 				error: (r,x,e) =>{
 					alert(r.state)
