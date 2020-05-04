@@ -1,29 +1,29 @@
-"user strict"
+"use strict"
 
-var user = user||{}
+var user = user ||{}
 
-admin = (()=>{
+  user = (()=>{
+	  const WHEN_ERROR = '호출하는 js 파일을 찾지 못했습니다.'
+		  let admin_vue
 	let init = () => {
-		alert('1')
+		admin_vue = '/resources/vue/admin_vue.js'
 		onCreate()
 	}
 	let onCreate = () => {
 		setContentView()
-	    $('#register_a').click(e=>{
-	    	 e.preventDefault()
-	     	location.href = "/admin"
-	     })
-	      $('#access_a').click(e=>{
-	    	
-	    	 
-	     }) 
-	}
-	let setContentView = () => {
-		  $('#kcdc').css({ width: '80%', height: '900px' }).addClass('border_black center')
-		     $('#tr_1').css({ width: '80%', height: '50px' }).addClass('border_black center')
-		     $('#menu').css({ width: '80%', height: '50px' }).addClass('border_black center')
-		     $('#kcdc td').addClass('border_black', 'width_full')
+		$('#register_a').click(e=>{
+		$('#content').empty()
+		$('#content').html(adminVue.join())
+		$(`<inpt type = " button"/>`)
+		.attr({value:'등록'})
+		.css({w})
+		})
 		
 	}
+	let setContentView = () => {
+		
+	}
+	
 	return {init}
+	
 })()

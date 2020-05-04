@@ -1,18 +1,55 @@
-"user strict"
+"use strict"
 
-var admin = admin|| {} //네임스페이스
+var admin = admin || {}
 
-admin = (()=>{ // 이파이패턴
+admin = (() => {
 	let init = () => {
-		alert('1')
-		onCreat()
+		onCreate()
 	}
-	let onCreat = () => {
-		alert('2')
+	let onCreate = () => {
 		setContentView()
+		$.getJSON('/users', d => {
+			$('#total_count').text('총회원수  : '+d.length)
+			$.each(d, (i, j) => {
+				$(`<tr>
+                        	<td>
+                                <span>${i+1}</span>
+                            </td>
+                            <td>
+                                <span>${j.userid}</span>
+                            </td>
+                            <td>
+                                <span id="user_`+(i+1)+`"></span>
+                            </td>
+                             <td>
+                                <span>${j.ssn}</span>
+                            </td>
+                           <td>
+                                <span>${j.email}</span>
+                            </td>
+                            <td>
+                                <span>${j.phoneNumber}</span>
+                            </td>
+                            <td>
+                                <span>${j.registerDate}</span>
+                            </td>
+                            
+                        </tr>`).appendTo('#userData')
+                        
+                        $(`<a>${j.name}</a>`)
+                        .css({cursor: 'pointer',color: 'blue'})
+                        .appendTo("#user_"+(i+1))
+                        .click(e => {
+                        	alert(`${j.userid}`)
+                        })
+                        
+			}) // each
+		}) // getJSON
 	}
 	let setContentView = () => {
-		alert('3')
+		$('#userData tr').first().css({'background-color':'yellow'})
 	}
 	return {init}
+	
 })()
+

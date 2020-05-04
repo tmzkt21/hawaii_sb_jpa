@@ -6,15 +6,9 @@ import com.occamsrazor.web.util.Messenger;
 
 public interface UserService {
 
-	public void post(User user);
+	
 
-	public List<User> list();
-
-	public User detail(String userid);
-
-	public void update(User user);
-
-	public void delete(User user);
+	public List<User> findAll();
 
   
 
