@@ -37,7 +37,8 @@ public class AdminController {
 	@GetMapping("/{employNumber}")
 	public Admin detail(@PathVariable String employNumber) {
 		//adminservice.detail(employNumber);
-		return adminService.findOne(employNumber);
+		System.out.println(employNumber);
+		return adminService.findOne("컨트롤러");
 	}
 	@PutMapping("{employNumber}")
 	public Messenger put(@RequestBody Admin admin) {

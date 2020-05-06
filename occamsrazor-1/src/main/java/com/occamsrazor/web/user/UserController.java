@@ -33,6 +33,12 @@ public class UserController {
 		return userservice.findAll();
 	}
 	
+	@GetMapping("/{userid}")
+	public User detail(@PathVariable String userid) {
+		return userservice.findOne(userid);
+		
+	}
+	
 
 
 

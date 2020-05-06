@@ -40,6 +40,14 @@ public class UserServiceImpl implements UserService{
 
 
 
+	@Override
+	public User findOne(String userid) {
+
+		return userDao.selectOne(userid);
+	}
+
+
+
 
 	
 	

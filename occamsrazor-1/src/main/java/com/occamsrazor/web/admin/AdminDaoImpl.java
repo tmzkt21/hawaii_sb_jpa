@@ -1,8 +1,11 @@
 package com.occamsrazor.web.admin;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
@@ -21,7 +24,7 @@ public class AdminDaoImpl  implements AdminDao{
 //			File file = new File(Data.ADMIN_PATH.toString() + Data.LIST + Data.CSV);
 			BufferedWriter writer = new BufferedWriter(
 									new FileWriter(
-									new File(Data.ADMIN_PATH.toString() + Data.LIST + Data.CSV), true));
+									new File(Data.ADMINS.toString()), true));
 			
 			writer.write(admin.toString());
 			writer.newLine(); // 줄바꿈
@@ -36,13 +39,39 @@ public class AdminDaoImpl  implements AdminDao{
 
 	@Override
 	public List<Admin> selectAll() {
-		List<Admin> list = null;
-		try {
+
+		List<Admin> list = new ArrayList<>();
+		List<String> temp = new ArrayList<>();
+ 		try {
+ 			File file = new File(Data.ADMINS.toString());
+ 			BufferedReader reader = 
+ 					new BufferedReader(
+ 							new FileReader(file));
+ 			String message = "";
+ 			while((message = reader.readLine()) != null) {
+ 				temp.add(message);
+ 				
+ 			}
+			reader.close();
 			
 		} catch (Exception e) {
-		
-		}finally {
-			
+			System.out.println("에러");
+		}
+ 		Admin a = null;
+ 		for (int i = 0; i < temp.size(); i++) {
+			a = new Admin();
+			String[] arr = temp.get(i).split(",");
+			System.out.println(a);
+			//employNumber, passwd ,name , position, profile, email, phoneNumber, registerDate
+			a.setEmployNumber(arr[0]);
+			a.setPasswd(arr[1]);
+			a.setName(arr[2]);
+			a.setPosition(arr[3]);
+			a.setProfile(arr[4]);
+			a.setEmail(arr[5]);
+			a.setPhoneNumber(arr[6]);
+			a.setRegisterDate(arr[7]);
+			list.add(a);
 		}
 		
 		return list;
@@ -50,17 +79,17 @@ public class AdminDaoImpl  implements AdminDao{
 
 	@Override
 	public Admin selectOne(String employNumber) {
-		Admin admin = null;
-		
-		try {
-		
-			
-		} catch (Exception e) {
-		
-		}finally {
-			
+		List<Admin> list = selectAll();
+		System.out.println("다오임플");
+		Admin findadmin = null;
+		for (Admin a:list) {
+			if (employNumber.equals(a.getEmployNumber())) {
+				findadmin = a;
+				break;
+			}
 		}
-		return admin;
+		
+		return findadmin;
 	}
 
 	@Override

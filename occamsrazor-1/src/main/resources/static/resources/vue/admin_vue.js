@@ -1,9 +1,9 @@
 "use strict"
-
-const adminVue ={
-		join:() => {
-			return` <table id="kcdc">
-			 <td id="content" colspan="4">
+var adminVue = {
+		join : () =>{
+			return `<table id="kcdc">
+                <tr>
+            <td id="content" colspan="4">
                 <table id="admin" style="width: 80%; height:80%; margin: 0 auto">
 			    <tr style="width: 80%;height: 50px;">
 			      <td rowspan="4">
@@ -41,33 +41,28 @@ const adminVue ={
 			      </td>
 			    </tr>
 			    <tr style="height: 20%">
-			      <td colspan="3">
-			        <input id="admin_register" type="button" value="등록하기" style="width: 200px; height: 100px;font-size: 30px;"/>
-			        
-			        <input id="admin_cancel" type="button" value="취소하기" style="width: 200px; height: 100px;margin-left: 50px;font-size: 30px;"/>
+			      <td colspan="3" id="button_box">
 			      </td>
 			    </tr>
 			  </table>
-          </td>
+            </td>
         </tr>
-    </table> `
-			
-			
+    </table>
+	     	`
+		},
+		login : ()=>{
+			return `
+				<article>
+				   <form id="login_box">
+				   	<label>ID </label> <br>
+				   	<input id="userid" type="text"> <br>
+				   	<label>PASSWORD</label><br>
+				   	<input id="passwd" type="text"><br>
+				   
+				   </form>
+				  </article>
+			`
 		}
 		
-		login:() =>{
-			return`
-			<article>
-			<form id = " login_box">
-			<label>ID</laber><br>
-			<form id= "userid" type="text"><br>
-			<label>PASSWD</lavel><br>
-			<form  id="passwd" type="text"><br>
-			</form>
-			</article>
-			
-			
-			
-		}
 		
 }
