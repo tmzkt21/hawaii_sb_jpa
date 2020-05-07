@@ -44,18 +44,49 @@
             width: 100%;
         }
         
-        
-        #userData tr th, #items tr th {
+          #userData tr th, #users tr th {
             border: 1px solid black;
             text-align: center;
             margin: 0 auto;
             background-color: yellow
         }
-        #userData tr, #items tr {
+        #userData tr, #users tr {
             height: 30px;
             border: 1px solid black;
         }
-        #userData tr td, #items tr td  {
+        #userData tr td, #users tr td  {
+            width: 150px;
+            border: 1px solid black;
+        }
+        
+        
+        #lossData tr th, #items tr th {
+            border: 1px solid black;
+            text-align: center;
+            margin: 0 auto;
+            background-color: yellow
+        }
+        #lossData tr, #items tr {
+            height: 30px;
+            border: 1px solid black;
+        }
+       #lossData tr td, #items tr td  {
+            width: 150px;
+            border: 1px solid black;
+        }
+        
+        
+         #adminData tr th, #admins tr th {
+            border: 1px solid black;
+            text-align: center;
+            margin: 0 auto;
+            background-color: yellow
+        }
+        #adminData tr, #admins tr {
+            height: 30px;
+            border: 1px solid black;
+        }
+       #adminData tr td, #admins tr td  {
             width: 150px;
             border: 1px solid black;
         }
@@ -111,8 +142,8 @@
             	<h3 id ="total_count" style="margin-bottom: 50px">  총회원수: </h3>
             	<div style="margin-bottom: 50px">이름 조회 :<input type ="text"/></div>
             		<ul id="side_menu">
-						  <li><a id = "user" type="button" class="active" href="#">사용자목록</a></li>
-						  <li><a id = "admin" type="button" class="active" href="#">관리자목록</a></li>
+						  <li><a id = "user" style="cursor: pointer" href="#">사용자목록</a></li>
+						  <li><a id = "admin" style="cursor: pointer" href="#">관리자목록</a></li>
 						  <li><a id = "lost" style="cursor: pointer">분실물 목록</a></li>
 						  <li><a id = "album" class="active" href="#about">앨범 차트</a></li>
 						</ul>

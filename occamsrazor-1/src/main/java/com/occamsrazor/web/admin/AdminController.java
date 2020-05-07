@@ -31,20 +31,21 @@ public class AdminController {
 
 	@GetMapping("")
 	public List<Admin> list() {
-		//adminservice.list();
+		System.out.println("컨트롤러");
 		return adminService.list();
 	}
+	
 	@GetMapping("/{employNumber}")
 	public Admin detail(@PathVariable String employNumber) {
-		//adminservice.detail(employNumber);
 		System.out.println(employNumber);
 		return adminService.findOne("컨트롤러");
 	}
+	
 	@PutMapping("{employNumber}")
 	public Messenger put(@RequestBody Admin admin) {
-		//adminservice.modify(admin);
 		return Messenger.SUCCESS;
 	}
+	
 	@DeleteMapping("/{employNumber}")
 	public Messenger delete(@RequestBody Admin admin) {
 		adminService.remove(admin);

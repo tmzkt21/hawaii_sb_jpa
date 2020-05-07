@@ -1,7 +1,11 @@
 "use strict"
 var adminVue = {
 		join : () =>{
-			return `<table id="kcdc">
+			return 
+//			$('#user').click(e=>{
+//				$('#content').empty()
+//				$('#content').html
+			(`<table id="users">
                 <tr>
             <td id="content" colspan="4">
                 <table id="admin" style="width: 80%; height:80%; margin: 0 auto">
@@ -49,6 +53,7 @@ var adminVue = {
         </tr>
     </table>
 	     	`
+//					) )}
 		},
 		login : ()=>{
 			return `

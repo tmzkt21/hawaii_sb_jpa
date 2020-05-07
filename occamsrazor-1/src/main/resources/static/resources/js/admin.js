@@ -90,23 +90,23 @@ admin = (() => {
                     $.each(d, (i, j)=>{
                     	$(` <tr>
                     		<td>
-                                <span>${j.Number} </span>
+                                <span>${j.itemid} </span>
                             </td>
                             
                             <td>
-                                 <span>${j.Thing} </span>
+                                 <span>${j.itemName} </span>
                             </td>
                             
                              <td>
-                                <span>${j.Date} </span>
+                                <span>${j.takenDate} </span>
                             </td>
                             
                            <td>
-                               <span>${j.Besides} </span>
+                               <span>${j.category} </span>
                             </td>
                             
                             <td>
-                               	<span>${j.Train} </span>
+                               	<span>${j.takenPostion} </span>
                             </td>
                             
                          
@@ -115,6 +115,87 @@ admin = (() => {
                     })
 			    })
 			})
+			
+			$('#admin').click(e=>{
+				e.preventDefault()
+				$('#content').empty()
+				$('#content').html(`
+				<table id="admins">
+				<tr>
+                    		<td>
+                                <span>순번</span>
+                            </td>
+                            
+                            <td>
+                                 <span>비밀번호</span>
+                            </td>
+                            
+                             <td>
+                                <span>이름</span>
+                            </td>
+                            
+                           <td>
+                               <span>직급</span>
+                            </td>
+                            
+                            <td>
+                               	<span>프로필</span>
+                            </td>
+                             <td>
+                               	<span>이메일</span>
+                            </td>
+                             <td>
+                               	<span>전화번호</span>
+                            </td>
+                             <td>
+                               	<span>등록날짜</span>
+                            </td>
+                            
+                         
+                        </tr>`)
+                        
+                        $.getJSON(`/admins`, d=>{
+                        	$.each(d, (i ,j)=>{
+                        		alert('겟제이슨')
+                        		$(`<tr>
+                    		<td>
+                                <span>{j.employNumber}</span>
+                            </td>
+                            
+                            <td>
+                                 <span>{j.passwd}</span>
+                            </td>
+                            
+                             <td>
+                                <span>{j.name}</span>
+                            </td>
+                            
+                           <td>
+                               <span>{j.position}</span>
+                            </td>
+                            
+                            <td>
+                               	<span>{j.profile}</span>
+                            </td>
+                             <td>
+                               	<span>{j.email}</span>
+                            </td>
+                             <td>
+                               	<span>{j.phoneNumber}</span>
+                            </td>
+                             <td>
+                               	<span>{j.registerDate}</span>
+                            </td>
+                            
+                         
+                        </tr>`).appendTo('#admins')
+                        	})
+                        })
+				
+			})
+			
+				
+			
 			
 		}).fail(()=>{
 			alert(WHEN_ERROR)

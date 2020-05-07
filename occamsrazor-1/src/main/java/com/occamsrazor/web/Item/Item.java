@@ -9,7 +9,7 @@ import lombok.Data;
 @Data
 
 public class Item {
-private String Itemid,ItemName,TakenDate,Category,TakenPostion;
+private String itemid, itemName, takenDate, category, takenPostion;
 
 
 

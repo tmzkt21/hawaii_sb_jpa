@@ -52,7 +52,7 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public List<Admin> list() {
-
+		System.out.println("서비스임플");
 		return adminDao.selectAll();
 	}
 

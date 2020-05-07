@@ -72,6 +72,7 @@ public class AdminDaoImpl  implements AdminDao{
 			a.setPhoneNumber(arr[6]);
 			a.setRegisterDate(arr[7]);
 			list.add(a);
+			System.out.println("다오임플 리스트");
 		}
 		
 		return list;
@@ -80,7 +81,7 @@ public class AdminDaoImpl  implements AdminDao{
 	@Override
 	public Admin selectOne(String employNumber) {
 		List<Admin> list = selectAll();
-		System.out.println("다오임플");
+	
 		Admin findadmin = null;
 		for (Admin a:list) {
 			if (employNumber.equals(a.getEmployNumber())) {
